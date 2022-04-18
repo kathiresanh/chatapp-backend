@@ -24,6 +24,25 @@ const io = new Server(httpServer, { cors :{
 } });
 
 
+
+// api for portfolio to store the messages and email in separate database kathir guvi portfolio
+
+
+
+app.post("/sendmessage",async function(req,res){
+    
+    try {
+     
+        let connection = await mongoClient.connect(URL);
+        let db = connection.db("portfolio");
+        await db.collection("users").insertOne(req.body);
+        res.send("sucessfully send")
+        connection.close();
+    } catch (error) {
+        console.log(error)
+    }
+   })
+
 app.post("/register",async function(req,res){
     
     try {
