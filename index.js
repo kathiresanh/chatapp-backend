@@ -25,9 +25,7 @@ const io = new Server(httpServer, { cors :{
 
 
 
-// api for portfolio to store the messages and email in separate database kathir guvi portfolio
-
-
+// api for portfolio to store the messages and email in separate database kathir guvi portfolio website backend
 
 app.post("/sendmessage",async function(req,res){
     
